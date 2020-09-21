@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans 
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd"  >
+
+<bean id="vehiclecar" class="com.vivek.springCoreLearning.Car">
+</bean>
+<bean id="vehiclebike" class="com.vivek.springCoreLearning.Bike">
+</bean>
+
+<bean id="vehicleCarConstructor" class="com.vivek.springCoreLearning.Car">
+ <constructor-arg> 
+ <bean class="com.vivek.springCoreLearning.ObjectForConstructor" /> 
+ </constructor-arg> 
+</bean>
+<bean id="vehicleBikeConstructor" class="com.vivek.springCoreLearning.Bike">
+ <constructor-arg> 
+ <bean class="com.vivek.springCoreLearning.ObjectForConstructor" /> 
+ </constructor-arg> 
+</bean>
+<bean id="vehicleCarNameObjectSetter" class="com.vivek.springCoreLearning.Car">
+        <property name="ofcObject"> 
+            <ref bean="constructorobject" /> 
+        </property> 
+</bean>
+<bean id="vehicleBikeNameObjectSetter" class="com.vivek.springCoreLearning.Bike">
+        <property name="ofcObject"> 
+            <ref bean="constructorobject" /> 
+        </property> 
+</bean>
+<bean id="vehicleCarNamePropertySetter" class="com.vivek.springCoreLearning.Car">
+        <property name="car" value="AUDI">  
+        </property> 
+</bean>
+<bean id="vehicleBikeNamePropertySetter" class="com.vivek.springCoreLearning.Bike">
+        <property name="bike" value="VESPA"> 
+        </property> 
+</bean>
+<bean id="constructorobject" class="com.vivek.springCoreLearning.ObjectForConstructor">
+</bean>
+</beans>
